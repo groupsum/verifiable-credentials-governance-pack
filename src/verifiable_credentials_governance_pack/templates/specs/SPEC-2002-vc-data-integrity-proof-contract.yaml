@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "spec",
+  "spec_kind": "governance",
+  "id": "spc:vc-data-integrity-proof-contract",
+  "number": 2002,
+  "slug": "vc-data-integrity-proof-contract",
+  "title": "VC Data Integrity Proof Contract",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "adr_ids": ["adr:vc-securing-mechanisms-are-profiled-as-data-integrity-and-jose-cose"],
+  "summary": "Data Integrity proof support must declare proof type, cryptosuite, proof purpose, verification method handling, transformation, hashing, and verification behavior.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://www.w3.org/TR/vc-data-integrity/"],
+  "body": "## Requirements\n\n- Implementations claiming Data Integrity support must declare supported cryptosuites and proof types.\n- Verification must enforce proof purpose, verification method binding, proof serialization, transformation, hashing, and cryptographic verification according to the selected cryptosuite.\n- Unsupported cryptosuites, malformed proofs, mismatched proof purposes, unresolved verification methods, and transformed payload tampering must fail closed.\n- Remote context, verification method, and related resource retrieval behavior must be documented when used.\n\n## Evidence Expectations\n\n- Positive fixtures for each declared cryptosuite.\n- Negative fixtures for tampered payloads, wrong proof purpose, wrong verification method, unknown cryptosuite, invalid canonicalization input, and unavailable verification material.\n"
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "spec",
+  "spec_kind": "governance",
+  "id": "spc:vc-status-and-revocation-contract",
+  "number": 2004,
+  "slug": "vc-status-and-revocation-contract",
+  "title": "VC Status And Revocation Contract",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "adr_ids": ["adr:vc-status-and-revocation-are-governed-through-explicit-status-mechanisms"],
+  "summary": "VC status support must declare supported status mechanisms and verifier behavior for active, revoked, suspended, stale, unavailable, and unsupported status resources.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://www.w3.org/TR/vc-data-model-2.0/", "https://www.w3.org/TR/vc-bitstring-status-list/"],
+  "body": "## Requirements\n\n- Implementations must declare supported credential status mechanisms.\n- Bitstring Status List support must validate status list credential integrity, status purpose, status index, status size, status message handling where used, and issuer or verifier policy constraints.\n- Verifier policy must define behavior when credential status is absent, unsupported, stale, unavailable, or cryptographically invalid.\n- Status success must not override failed VC or VP proof verification.\n\n## Evidence Expectations\n\n- Fixtures for active, revoked, suspended, stale, unavailable, malformed, unsupported, and tampered status resources.\n- Evidence showing cache and freshness behavior when remote status resources are used.\n"
+}

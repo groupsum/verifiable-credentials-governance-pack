@@ -1,0 +1,84 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "verifiable-credentials-governance-pack"
+version = "0.1.1.dev1"
+description = "Installable SSOT governance pack for W3C Verifiable Credentials, presentations, securing mechanisms, status models, schema use, cryptosuite profiles, and adjacent issuance/presentation protocols."
+readme = "README.md"
+requires-python = ">=3.10,<3.15"
+license = "Apache-2.0"
+authors = [{ name = "Jacob Stewart", email = "jacob@swarmauri.com" }]
+dependencies = [
+  "ssot-pack-contracts>=0.2.17,<0.3.0",
+  "tomli>=2.0.1; python_version < '3.11'",
+]
+keywords = [
+  "ssot",
+  "ssot-registry",
+  "ssot-pack-contracts",
+  "governance-pack",
+  "governance",
+  "adr",
+  "spec",
+  "architecture-decision-records",
+  "conformance",
+  "compliance",
+  "verifiable-credentials",
+  "verifiable-presentations",
+  "vc-data-model",
+  "data-integrity",
+  "jose",
+  "cose",
+  "openid4vci",
+  "openid4vp",
+  "sd-jwt-vc",
+  "did",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Information Technology",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Documentation",
+  "Topic :: Software Development :: Documentation",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Software Development :: Quality Assurance",
+  "Topic :: Utilities",
+  "Topic :: Security",
+  "Topic :: Text Processing :: Markup",
+]
+
+[project.urls]
+Homepage = "https://github.com/groupsum/verifiable-credentials-governance-pack"
+Repository = "https://github.com/groupsum/verifiable-credentials-governance-pack"
+Issues = "https://github.com/groupsum/verifiable-credentials-governance-pack/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"verifiable_credentials_governance_pack" = ["metadata.json"]
+"verifiable_credentials_governance_pack.templates.adr" = ["*.json", "*.yaml"]
+"verifiable_credentials_governance_pack.templates.specs" = ["*.json", "*.yaml"]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

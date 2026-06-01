@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "adr",
+  "id": "adr:dids-are-optional-identifiers-for-vc-not-a-vc-prerequisite",
+  "number": 1004,
+  "slug": "dids-are-optional-identifiers-for-vc-not-a-vc-prerequisite",
+  "title": "DIDs Are Optional Identifiers For VC Not A VC Prerequisite",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "summary": "DIDs are optional identifiers and proof integrations for VC ecosystems; baseline VC conformance must not require DID support.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://www.w3.org/TR/vc-data-model-2.0/", "https://www.w3.org/TR/did-core/", "https://www.w3.org/TR/cid/"],
+  "body": "## Context\n\n- VC Data Model v2.0 supports identifiers and verification material without requiring every credential to use a DID.\n- DID Core and Controlled Identifiers define adjacent identifier and verification-material concepts.\n- Some VC ecosystems require DID methods, while others use URLs, issuer metadata, keys, certificates, or registry-backed identifiers.\n\n## Decision\n\n- DIDs are optional VC identifier integrations, not a prerequisite for baseline VC conformance.\n- DID method support must be explicitly declared by downstream profiles that use DIDs for issuer, holder, subject, or verification-method identifiers.\n- DID resolution and dereferencing requirements belong to a DID-focused governance surface unless a downstream VC profile imports them explicitly.\n\n## Consequences\n\n- VC implementations can conform to baseline VC requirements without implementing DID resolution.\n- Tests must distinguish DID-free VC payloads from DID-profiled VC payloads.\n- Documentation must not imply that DID support exists unless specific DID methods and resolution behavior are declared.\n"
+}

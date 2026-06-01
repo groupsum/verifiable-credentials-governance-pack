@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "spec",
+  "spec_kind": "governance",
+  "id": "spc:dif-presentation-exchange-boundary-contract",
+  "number": 2009,
+  "slug": "dif-presentation-exchange-boundary-contract",
+  "title": "DIF Presentation Exchange Boundary Contract",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "adr_ids": ["adr:openid4vc-protocols-are-transport-rails-not-vc-core", "adr:selective-disclosure-and-format-profiles-must-be-explicitly-declared"],
+  "summary": "DIF Presentation Exchange support must be treated as a presentation constraint and submission profile, not as a replacement for VC or VP verification.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://identity.foundation/presentation-exchange/", "https://www.w3.org/TR/vc-data-model-2.0/"],
+  "body": "## Requirements\n\n- Implementations claiming Presentation Exchange support must declare supported presentation definition, input descriptor, constraints, submission, and format behavior.\n- Presentation Exchange matching must run separately from VC proof verification, VP proof verification, and credential status validation.\n- Unsupported constraint fields, formats, path expressions, or submission descriptors must fail according to verifier policy.\n- Selective disclosure behavior must be declared when Presentation Exchange is used to request partial disclosure.\n\n## Evidence Expectations\n\n- Fixtures for matching and non-matching presentation definitions, missing descriptors, wrong formats, invalid submissions, and credentials that match constraints but fail proof or status verification.\n"
+}

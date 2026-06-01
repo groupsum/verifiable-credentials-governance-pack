@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "adr",
+  "id": "adr:vc-status-and-revocation-are-governed-through-explicit-status-mechanisms",
+  "number": 1003,
+  "slug": "vc-status-and-revocation-are-governed-through-explicit-status-mechanisms",
+  "title": "VC Status And Revocation Are Governed Through Explicit Status Mechanisms",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "summary": "Credential status, suspension, and revocation are governed only through explicitly declared status mechanisms and verifier policy.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://www.w3.org/TR/vc-data-model-2.0/", "https://www.w3.org/TR/vc-bitstring-status-list/"],
+  "body": "## Context\n\n- The VC data model defines credential status as an extension point.\n- Bitstring Status List v1.0 defines a W3C status mechanism for status information such as revocation and suspension.\n- A credential without status metadata does not automatically prove that it is current for every verifier policy.\n\n## Decision\n\n- Credential status and revocation behavior must be governed through explicitly declared status mechanisms.\n- Bitstring Status List v1.0 is the baseline W3C status authority when that status type is declared.\n- Verifier policy must decide whether absence of status information is acceptable for the relying context.\n- Implementations must distinguish cryptographic validity from status freshness and verifier fitness for purpose.\n\n## Consequences\n\n- Tests must include active, revoked, suspended, unavailable, stale, and unsupported status cases for declared status mechanisms.\n- Status retrieval and cache behavior must be documented when a downstream verifier depends on remote status resources.\n- Release claims must not imply universal revocation support when only a subset of status mechanisms is implemented.\n"
+}

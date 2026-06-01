@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "spec",
+  "spec_kind": "governance",
+  "id": "spc:vc-json-schema-and-vocabulary-contract",
+  "number": 2005,
+  "slug": "vc-json-schema-and-vocabulary-contract",
+  "title": "VC JSON Schema And Vocabulary Contract",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "adr_ids": ["adr:w3c-vc-data-model-is-the-core-credential-and-presentation-authority"],
+  "summary": "VC schema and vocabulary support must distinguish JSON Schema validation, JSON-LD context semantics, type vocabulary, and verifier policy fitness.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://www.w3.org/TR/vc-data-model-2.0/", "https://www.w3.org/TR/vc-json-schema/"],
+  "body": "## Requirements\n\n- Implementations must declare whether they support VC JSON Schema, JSON-LD vocabulary processing, static context validation, or type-specific processing.\n- Schema validation must not be treated as proof verification, status validation, or verifier policy acceptance.\n- Unsupported schema types, unavailable schema resources, mismatched schema digests, and invalid credentialSubject shapes must fail according to verifier policy.\n- Vocabulary and context handling must be documented for processors that do or do not perform JSON-LD expansion.\n\n## Evidence Expectations\n\n- Fixtures for valid schemas, invalid schemas, unavailable schema resources, wrong schema type, mismatched context, unsupported type, and schema-valid but policy-invalid credentials.\n"
+}

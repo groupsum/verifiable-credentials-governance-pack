@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "ssot_package_name": "verifiable-credentials-governance-pack",
+  "origin": {
+    "id": "pack:verifiable-credentials-governance",
+    "package_name": "verifiable-credentials-governance-pack",
+    "import_name": "verifiable_credentials_governance_pack",
+    "kind": "governance-pack",
+    "title": "Verifiable Credentials Governance",
+    "description": "Installable SSOT governance pack for W3C Verifiable Credentials, presentations, securing mechanisms, status models, schema use, cryptosuite profiles, and adjacent issuance/presentation protocols.",
+    "homepage": "https://github.com/groupsum/verifiable-credentials-governance-pack",
+    "repository": "https://github.com/groupsum/verifiable-credentials-governance-pack"
+  },
+  "compatibility": {
+    "python": ">=3.10,<3.15",
+    "ssot_registry_schema": ">=0.4.0",
+    "ssot_pack_contract": ">=0.2.17,<0.3.0"
+  },
+  "trust": {
+    "trusted_by_default": false,
+    "origin": "extension-pack",
+    "reservation_owner": "extension-pack:verifiable-credentials-governance-pack"
+  },
+  "documents": {
+    "adr": {
+      "manifest_path": "templates/adr/manifest.json"
+    },
+    "spec": {
+      "manifest_path": "templates/specs/manifest.json"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "spec",
+  "spec_kind": "governance",
+  "id": "spc:openid4vp-presentation-boundary-contract",
+  "number": 2008,
+  "slug": "openid4vp-presentation-boundary-contract",
+  "title": "OpenID4VP Presentation Boundary Contract",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "adr_ids": ["adr:openid4vc-protocols-are-transport-rails-not-vc-core"],
+  "summary": "OpenID4VP support must govern presentation request, response, nonce, audience, wallet, verifier, and profile behavior separately from VC and VP proof validation.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://openid.net/specs/openid-4-verifiable-presentations-1_0.html", "https://www.w3.org/TR/vc-data-model-2.0/"],
+  "body": "## Requirements\n\n- Implementations claiming OpenID4VP support must declare supported request modes, response modes, presentation formats, client metadata, wallet behavior, and verifier policy.\n- Protocol validation must enforce nonce, audience, response binding, request integrity, redirect behavior, and declared profile constraints.\n- VP and embedded VC verification must run separately from OpenID protocol validation.\n- Unsupported request modes, response modes, formats, or verifier constraints must fail closed.\n\n## Evidence Expectations\n\n- Fixtures for valid presentation requests and responses for each declared mode.\n- Negative cases for replayed nonce, wrong audience, malformed presentation submission, unsupported format, invalid client metadata, and valid protocol response with invalid VC payload.\n"
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "spec",
+  "spec_kind": "governance",
+  "id": "spc:vc-jose-cose-securing-contract",
+  "number": 2003,
+  "slug": "vc-jose-cose-securing-contract",
+  "title": "VC JOSE COSE Securing Contract",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "adr_ids": ["adr:vc-securing-mechanisms-are-profiled-as-data-integrity-and-jose-cose"],
+  "summary": "JOSE/COSE VC support must declare token or envelope format, algorithms, key discovery, media types, detached or embedded payload behavior, and validation policy.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://www.w3.org/TR/vc-jose-cose/"],
+  "body": "## Requirements\n\n- Implementations claiming JOSE/COSE securing support must declare the supported VC token or envelope formats.\n- Verification must enforce supported algorithms, critical headers, media types, issuer or key binding, payload integrity, temporal validity, and profile-specific claims.\n- Unsupported algorithms, missing required headers, wrong media types, invalid signatures, and payload mismatch must fail closed.\n- JOSE/COSE verification must remain separate from VC data model validation and verifier business policy.\n\n## Evidence Expectations\n\n- Positive fixtures for each declared JOSE or COSE profile.\n- Negative fixtures for unsupported algorithm, bad signature, malformed protected header, wrong media type, mismatched payload, and missing required profile claims.\n"
+}

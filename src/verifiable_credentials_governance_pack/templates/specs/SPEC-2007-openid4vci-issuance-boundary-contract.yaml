@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "spec",
+  "spec_kind": "governance",
+  "id": "spc:openid4vci-issuance-boundary-contract",
+  "number": 2007,
+  "slug": "openid4vci-issuance-boundary-contract",
+  "title": "OpenID4VCI Issuance Boundary Contract",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "adr_ids": ["adr:openid4vc-protocols-are-transport-rails-not-vc-core"],
+  "summary": "OpenID4VCI support must govern issuance protocol metadata, offers, authorization, token, credential, deferred, notification, and holder-binding behavior separately from VC payload validity.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html", "https://www.w3.org/TR/vc-data-model-2.0/"],
+  "body": "## Requirements\n\n- Implementations claiming OpenID4VCI support must declare supported flows, credential formats, credential issuer metadata, holder binding modes, and endpoint behavior.\n- Issuance protocol success must not imply the issued credential satisfies VC verification policy unless the credential payload is validated separately.\n- Credential offers, authorization details, token responses, credential requests, deferred issuance, notification behavior, and metadata retrieval must be tested according to the declared profile.\n- Unsupported flows, formats, metadata parameters, and proof-of-possession methods must be rejected explicitly.\n\n## Evidence Expectations\n\n- Fixtures for authorization-code and pre-authorized-code flows when declared.\n- Negative cases for malformed offers, unsupported formats, invalid holder binding, unavailable metadata, token errors, and credential endpoint errors.\n"
+}

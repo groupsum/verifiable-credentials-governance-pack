@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "adr",
+  "id": "adr:vc-securing-mechanisms-are-profiled-as-data-integrity-and-jose-cose",
+  "number": 1002,
+  "slug": "vc-securing-mechanisms-are-profiled-as-data-integrity-and-jose-cose",
+  "title": "VC Securing Mechanisms Are Profiled As Data Integrity And JOSE COSE",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "summary": "VC securing behavior is governed through explicit Data Integrity and JOSE/COSE profiles rather than implicit or unspecified proof handling.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://www.w3.org/TR/vc-data-integrity/", "https://www.w3.org/TR/vc-jose-cose/"],
+  "body": "## Context\n\n- VC Data Model v2.0 requires conforming documents to be secured by at least one securing mechanism.\n- W3C Data Integrity and VC JOSE/COSE define different processing and serialization approaches.\n- Interoperability failures often come from claiming generic proof support without declaring the securing mechanism and profile.\n\n## Decision\n\n- VC securing mechanisms must be explicitly profiled as Data Integrity, JOSE/COSE, or another named downstream profile.\n- Data Integrity proof processing is governed by the W3C VC Data Integrity specification and selected cryptosuite specifications.\n- JOSE/COSE securing is governed by the W3C VC JOSE/COSE specification and its selected token or envelope profile.\n- Implementations must not claim generic VC proof support without naming and testing the securing mechanism.\n\n## Consequences\n\n- Tests must include positive and negative cases for each declared securing mechanism.\n- Unsupported proof types, algorithms, cryptosuites, and token formats must fail closed.\n- Release claims must identify the securing mechanisms and profiles that passed verification evidence.\n"
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "spec",
+  "spec_kind": "governance",
+  "id": "spc:sd-jwt-vc-and-token-status-list-boundary-contract",
+  "number": 2010,
+  "slug": "sd-jwt-vc-and-token-status-list-boundary-contract",
+  "title": "SD-JWT VC And Token Status List Boundary Contract",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "adr_ids": ["adr:selective-disclosure-and-format-profiles-must-be-explicitly-declared", "adr:vc-status-and-revocation-are-governed-through-explicit-status-mechanisms"],
+  "summary": "SD-JWT VC and token status list support must be explicitly declared as profile support with disclosure, holder binding, token verification, and status-list evidence.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://www.w3.org/TR/vc-data-model-2.0/"],
+  "body": "## Requirements\n\n- Implementations claiming SD-JWT VC support must declare token format, selective disclosure behavior, holder binding behavior, digest algorithm support, claim handling, and presentation rules.\n- Token status list support must declare list format, status purpose, retrieval, freshness, and verifier policy behavior.\n- SD-JWT token verification must remain separate from VC data model validation where a profile maps token claims to VC concepts.\n- Unsupported disclosure, missing disclosures, over-disclosure, invalid holder binding, invalid token status, and unsupported status list formats must fail according to policy.\n\n## Evidence Expectations\n\n- Fixtures for valid disclosures, missing disclosures, tampered disclosures, wrong digest, wrong holder binding, revoked or suspended status, stale status list, and unsupported profile labels.\n"
+}

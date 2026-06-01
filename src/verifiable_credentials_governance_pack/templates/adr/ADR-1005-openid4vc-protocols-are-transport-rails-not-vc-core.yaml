@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "adr",
+  "id": "adr:openid4vc-protocols-are-transport-rails-not-vc-core",
+  "number": 1005,
+  "slug": "openid4vc-protocols-are-transport-rails-not-vc-core",
+  "title": "OpenID4VC Protocols Are Transport Rails Not VC Core",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "summary": "OpenID4VCI, OpenID4VP, SIOPv2, and OpenID Federation are governed as issuance, presentation, and trust transport/profile layers rather than VC core semantics.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html", "https://openid.net/specs/openid-4-verifiable-presentations-1_0.html", "https://openid.net/specs/openid-connect-self-issued-v2-1_0.html", "https://openid.net/specs/openid-federation-1_0.html"],
+  "body": "## Context\n\n- OpenID4VCI defines issuance APIs for Verifiable Credentials.\n- OpenID4VP defines presentation interactions for Verifiable Presentations.\n- SIOPv2 and OpenID Federation can contribute wallet, issuer, verifier, or trust metadata behavior.\n- These protocols transport or profile credentials but do not replace baseline VC data model requirements.\n\n## Decision\n\n- OpenID4VC protocols are governed as adjacent transport and interaction layers.\n- Implementations must separately declare VC data model support and OpenID protocol support.\n- Protocol success must not be treated as proof that the underlying credential or presentation satisfies VC validation policy.\n- OpenID metadata, request, response, and trust behavior must be tested as protocol contracts separate from VC payload processing.\n\n## Consequences\n\n- Tests should separate credential issuance, presentation request handling, and VC verification outcomes.\n- Release claims must specify whether OpenID4VCI, OpenID4VP, SIOPv2, or OpenID Federation support is included.\n- Unsupported OpenID extensions or profiles must fail closed or be rejected explicitly.\n"
+}

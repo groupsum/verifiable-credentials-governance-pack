@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "spec",
+  "spec_kind": "governance",
+  "id": "spc:vc-cryptosuite-profile-contract",
+  "number": 2006,
+  "slug": "vc-cryptosuite-profile-contract",
+  "title": "VC Cryptosuite Profile Contract",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "adr_ids": ["adr:vc-securing-mechanisms-are-profiled-as-data-integrity-and-jose-cose", "adr:selective-disclosure-and-format-profiles-must-be-explicitly-declared"],
+  "summary": "Cryptosuite support must explicitly declare EdDSA, ECDSA, BBS, or other suite behavior and provide suite-specific verification evidence.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://www.w3.org/TR/vc-di-eddsa/", "https://www.w3.org/TR/vc-di-ecdsa/", "https://www.w3.org/TR/vc-di-bbs/"],
+  "body": "## Requirements\n\n- Implementations must declare each supported cryptosuite by name and version.\n- EdDSA, ECDSA, and BBS suite support must follow the corresponding W3C Data Integrity cryptosuite specifications when declared.\n- Suite-specific canonicalization, hash, proof serialization, verification method, key type, and selective disclosure behavior must be tested.\n- Unsupported suite identifiers and algorithm substitutions must fail closed.\n\n## Evidence Expectations\n\n- Positive fixtures for each declared suite and key type.\n- Negative fixtures for wrong key type, wrong suite identifier, tampered disclosure, invalid derived proof, invalid base proof, unsupported algorithm, and transformed payload mismatch.\n"
+}

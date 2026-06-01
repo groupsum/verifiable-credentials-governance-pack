@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "adr",
+  "id": "adr:selective-disclosure-and-format-profiles-must-be-explicitly-declared",
+  "number": 1006,
+  "slug": "selective-disclosure-and-format-profiles-must-be-explicitly-declared",
+  "title": "Selective Disclosure And Format Profiles Must Be Explicitly Declared",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "summary": "Selective disclosure, credential format, and token status behavior must be explicitly declared as profile support rather than inferred from generic VC support.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://www.w3.org/TR/vc-data-model-2.0/", "https://www.w3.org/TR/vc-di-bbs/"],
+  "body": "## Context\n\n- Selective disclosure can be implemented through different mechanisms, including BBS-based proofs, SD-JWT VC, presentation exchange constraints, or profile-specific disclosure rules.\n- Credential format labels can hide materially different verification, privacy, and status behavior.\n- Generic VC support is not enough to imply support for selective disclosure or token-status profiles.\n\n## Decision\n\n- Selective disclosure and credential format profiles must be explicitly declared.\n- Implementations must name the supported format, proof mechanism, disclosure mechanism, holder binding behavior, and status-list behavior where applicable.\n- Unsupported disclosure profiles must not be accepted silently as generic VC payloads.\n\n## Consequences\n\n- Tests must include disclosed, undisclosed, tampered, over-disclosed, and unsupported-format cases for each declared profile.\n- Documentation must distinguish format parsing from proof verification and verifier policy satisfaction.\n- Release claims must state which selective disclosure and status profiles are supported.\n"
+}

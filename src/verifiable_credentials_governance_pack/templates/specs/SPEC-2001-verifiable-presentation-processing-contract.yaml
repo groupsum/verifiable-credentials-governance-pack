@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "kind": "spec",
+  "spec_kind": "governance",
+  "id": "spc:verifiable-presentation-processing-contract",
+  "number": 2001,
+  "slug": "verifiable-presentation-processing-contract",
+  "title": "Verifiable Presentation Processing Contract",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "decision_date": null,
+  "tags": [],
+  "adr_ids": ["adr:w3c-vc-data-model-is-the-core-credential-and-presentation-authority"],
+  "summary": "Verifiable Presentation processing must validate presentation structure, holder binding when declared, embedded credential processing, and verifier policy independently.",
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "references": ["https://www.w3.org/TR/vc-data-model-2.0/"],
+  "body": "## Requirements\n\n- Implementations must distinguish VC verification from VP verification.\n- Presentation processing must validate presentation structure, declared holder semantics, proof purpose, challenge or domain fields when required by the profile, and every embedded credential selected for verifier policy.\n- Holder binding requirements must be explicit; absence of holder binding must be handled according to verifier policy.\n- Presentations must not be accepted solely because embedded credentials parse successfully.\n\n## Evidence Expectations\n\n- Fixtures for valid and invalid presentations, multiple embedded credentials, missing holder binding, wrong challenge, wrong domain, stale proof, and unsupported proof type.\n- Evidence showing independent results for VP proof verification, embedded VC verification, status checks, and verifier policy matching.\n"
+}
