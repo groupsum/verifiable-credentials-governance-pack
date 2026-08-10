@@ -57,7 +57,7 @@ class GovernancePackManifestTests(unittest.TestCase):
     def test_pack_manifest_contract_is_exposed(self) -> None:
         manifest = load_pack_manifest()
         self.assertEqual("verifiable-credentials-governance-pack", manifest["metadata"]["origin"]["package_name"])
-        self.assertEqual(7, len(manifest["documents"]["adr"]))
+        self.assertEqual(8, len(manifest["documents"]["adr"]))
         self.assertEqual(11, len(manifest["documents"]["spec"]))
 
     def test_packaged_adr_documents_are_downstream_portable(self) -> None:

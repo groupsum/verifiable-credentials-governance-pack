@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "kind": "adr",
+  "id": "adr:vc-schemas-status-and-presentation-rules-are-owned-here",
+  "number": 1007,
+  "slug": "vc-schemas-status-and-presentation-rules-are-owned-here",
+  "title": "VC Schemas Status And Presentation Rules Are Owned Here",
+  "status": "accepted",
+  "origin": "extension-pack",
+  "summary": "VC schemas, status, securing, and presentation processing have one canonical owner.",
+  "body": "Verifiable credential governance owns credential and presentation data models, securing mechanisms, status, schemas, cryptosuites, and exchange boundaries. Customer profile governance consumes verified outputs.",
+  "decision_date": "2026-08-10",
+  "references": [
+    "https://www.w3.org/TR/vc-data-model-2.0/"
+  ],
+  "supersedes": [],
+  "superseded_by": [],
+  "status_notes": [],
+  "tags": [
+    "schemas",
+    "status",
+    "and",
+    "presentation",
+    "rules",
+    "are",
+    "owned",
+    "here"
+  ]
+}

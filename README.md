@@ -189,3 +189,7 @@ print(text[:120])
 - PyPI package: [verifiable-credentials-governance-pack](https://pypi.org/project/verifiable-credentials-governance-pack/)
 - SSOT Registry: [ssot-registry](https://pypi.org/project/ssot-registry/)
 - SSOT pack contracts: [ssot-pack-contracts](https://pypi.org/project/ssot-pack-contracts/)
+
+## Normative ownership boundary
+
+Declared canonical VC ownership relative to customer profile integration.

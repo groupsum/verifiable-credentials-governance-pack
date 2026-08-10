@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0.dev1
+
+- Declared canonical VC ownership relative to customer profile integration.
+
 ## 0.1.1.dev1
 
 - Added initial Verifiable Credentials governance-pack metadata.
