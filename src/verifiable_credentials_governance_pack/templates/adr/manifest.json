@@ -132,7 +132,7 @@
     "title": "VC Schemas Status And Presentation Rules Are Owned Here",
     "filename": "ADR-1007-vc-schemas-status-and-presentation-rules-are-owned-here.yaml",
     "target_path": ".ssot/adr/ADR-1007-vc-schemas-status-and-presentation-rules-are-owned-here.yaml",
-    "sha256": "1600e1be6066a2c3f6ce3e48294ac35651e68373cbf9efb1355f700cb9bbfc8b",
+    "sha256": "41ebbccf33399fb896c991527c4e140c34901adc3153806ad700fed6c5d13fb0",
     "origin": "extension-pack",
     "reservation_owner": "extension-pack:verifiable-credentials-governance-pack",
     "immutable": true,
