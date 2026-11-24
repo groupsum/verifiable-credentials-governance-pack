@@ -146,13 +146,15 @@ The script prints `pack:verifiable-credentials-governance` from the installed pa
 Source: [examples/usage.py](https://github.com/groupsum/verifiable-credentials-governance-pack/blob/master/examples/usage.py).
 
 ```python
-"""Resolve and read a packaged specification without synchronizing it."""
+"""Find a specification and its downstream path in the installed manifest."""
 
-from verifiable_credentials_governance_pack import load_document_manifest, read_packaged_document_text
+from verifiable_credentials_governance_pack import load_document_manifest
 
-spec = next(row for row in load_document_manifest("spec") if row["id"] == "spc:verifiable-credential-data-model-contract")
-document = read_packaged_document_text("spec", spec["filename"])
-assert spec["id"] in document
+specification = next(
+    row for row in load_document_manifest("spec")
+    if row["id"] == "spc:verifiable-credential-data-model-contract"
+)
+assert specification["target_path"] == ".ssot/specs/SPEC-2000-verifiable-credential-data-model-contract.yaml"
 ```
 <!-- readme-standards:end example.usage -->
 
